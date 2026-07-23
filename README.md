@@ -1,120 +1,110 @@
-# nexora-
-NEXORA is an AI-powered multimodal document intelligence platform designed to help users understand, analyze, and interact with complex documents using natural language.
+# NEXORA — Multimodal Document Intelligence Platform
 
-The platform is designed to process different types of information, including text, scanned documents, images, tables, charts, and graphs. Users can upload documents such as annual reports, research papers, invoices, contracts, and financial statements and interact with their content through an AI-powered interface.
+> **Understand. Explore. Discover.**  
+> An AI-powered document intelligence system capable of understanding plain text, scanned documents, tables, charts, graphs, diagrams, and multi-document comparisons with exact page citations and visual source highlighting.
 
-##  Problem Statement
+---
 
-Extracting useful information from lengthy and complex documents can be time-consuming. Users often need to manually search through multiple pages, understand tables and charts, and compare information across different documents.
+## 🌐 Live Application Links
 
-NEXORA aims to simplify this process by allowing users to interact with document content using natural language.
+- 🚀 **Live Web Application**: **[https://nexora-doc-ai.loca.lt](https://nexora-doc-ai.loca.lt)** *(Local: `http://localhost:5173`)*
+- ⚡ **Live FastAPI Backend API**: **[https://nexora-api.loca.lt](https://nexora-api.loca.lt)** *(Local: `http://127.0.0.1:8000`)*
+- 📦 **GitHub Repository**: **[https://github.com/keerthanayr16-droid/nexora-](https://github.com/keerthanayr16-droid/nexora-)**
 
-##  Key Features
+---
 
-* Upload and process complex documents
-* Ask questions about document content
-* AI-powered document summarization
-* Text and information extraction
-* Understanding of scanned documents and images
-* Table and structured data analysis
-* Chart and graph understanding
-* Multi-document comparison
-* Structured information extraction
-* Source-grounded responses with page-level references
+## 💻 Programming Languages & Technology Stack
 
-##  How It Works
+| Language / Framework | Category | Purpose in NEXORA |
+| :--- | :--- | :--- |
+| **TypeScript** | Frontend Core | React 19 SPA, Type-Safe State Management, Recharts Visualizations |
+| **Python 3.14** | Backend Engine | FastAPI REST Server, PyMuPDF Layout Parsing, Pandas Table Analytics, RAG Engine |
+| **Tailwind CSS v4** | UI Design System | Custom Midnight Azure Theme, Glassmorphism, Glow Animations |
+| **HTML5 / Canvas** | Document Viewer | Multi-page PDF Rendering, Page Citation Overlays & Bounding Box Highlights |
+| **JSON / Docker / YAML**| Cloud Manifests | Vercel Deployment (`vercel.json`), Dockerfile, and Render (`render.yaml`) |
 
-```text
-Upload Document
-      ↓
-Document Processing
-      ↓
-Text, Tables, Images & Charts Extraction
-      ↓
-Multimodal Understanding
-      ↓
-Chunking & Embeddings
-      ↓
-Vector Database
-      ↓
-Semantic Search
-      ↓
-RAG Pipeline
-      ↓
-AI-Generated Response
-      ↓
-Source Citation
-```
+---
 
-##  Tech Stack
+## 🔥 Key System Features
 
-### Frontend
+1. **Multimodal Document Ingestion & Classification**:
+   - Classifies each page as `Text`, `Table`, `Chart`, `Diagram`, or `Scanned Image`.
+   - Layout-aware text extraction with PyMuPDF (`fitz`).
+   - Table detection & relational DataFrame conversion via `pdfplumber` and `pandas`.
 
-* React
-* TypeScript
-* Tailwind CSS
+2. **Smart 2-Step Document Processing Pipeline**:
+   - **Step 1**: Select local PDF, invoice, contract, or spreadsheet.
+   - **Step 2**: Click **"⚡ Run Document Intelligence Pipeline"** to watch live processing progress (`Text Parsing` → `Table/Chart Detection` → `Vector Embeddings Indexing`).
 
-### Backend
+3. **Grounded Source Citations & Visual Page Highlighting**:
+   - Every AI response lists exact citations: `[Page X, Section Y]`.
+   - Clicking a citation automatically navigates the Document Viewer to that page and renders a pulsing bounding box overlay highlighting the source section.
 
-* Python
-* FastAPI
+4. **Multi-Document Comparison Dashboard**:
+   - Benchmark two or more documents side-by-side (e.g. FY 2023 vs FY 2024, Company A vs Company B).
+   - Generates structured comparative matrices and dual-bar metric charts.
 
-### AI & Machine Learning
+5. **Extracted Data & Analytics Studio**:
+   - Interactive table viewer with natural language pandas query engine.
+   - Dynamic Recharts metric visualizer (Bar & Line charts).
+   - Export extracted data as **CSV** or **JSON**.
 
-* Large Language Models
-* Vision-Language Models
-* Embeddings
-* Retrieval-Augmented Generation (RAG)
-* Semantic Search
+---
 
-### Document Processing
-
-* PyMuPDF
-* Docling
-* OCR
-* OpenCV
-
-### Database & Storage
-
-* PostgreSQL
-* Qdrant / ChromaDB
-* Cloud Storage
-
-## System Architecture
+## 🏗️ System Architecture
 
 ```text
-Frontend
-   ↓
-Backend API
-   ↓
-Document Processing
-   ↓
-Multimodal Analysis
-   ↓
-Embeddings
-   ↓
-Vector Database
-   ↓
-RAG Retrieval
-   ↓
-AI Model
-   ↓
-Grounded Response
+               USER PDF / IMAGE / SPREADSHEET
+                            │
+                            ▼
+              Select PDF & Click "Run Pipeline"
+                            │
+                            ▼
+           ┌────────────────┴────────────────┐
+           ▼                                 ▼
+   React 19 Frontend               FastAPI Python Backend
+   (TypeScript + Tailwind)         (PyMuPDF + pdfplumber)
+           │                                 │
+           │                                 ▼
+           │                     Document Classification
+           │                   ┌─────────────┼─────────────┐
+           │                   ▼             ▼             ▼
+           │                 Text         Tables        Charts
+           │                   │             │             │
+           │                   └─────────────┼─────────────┘
+           │                                 ▼
+           │                       Chunking & Metadata
+           │                                 │
+           │                                 ▼
+           │                       Hybrid BM25 + Vector RAG
+           │                                 │
+           ▼                                 ▼
+    Grounded Response ◀────────────── Agentic LLM / Vision
+   [Page X Citations]
 ```
 
-##  Project Status
+---
 
-Currently under development.
+## ⚡ Quick Start (Local Setup)
 
-The project is being built incrementally, starting with document processing, AI-powered question answering, and Retrieval-Augmented Generation.
+### 1. Clone Repository
+```bash
+git clone https://github.com/keerthanayr16-droid/nexora-.git
+cd nexora-
+```
 
-##  Future Enhancements
+### 2. Start Backend API
+```bash
+cd backend
+python -m pip install -r requirements.txt
+python -m uvicorn main:app --host 127.0.0.1 --port 8000
+```
 
-* Advanced multi-document reasoning
-* Improved chart and graph analysis
-* Automated structured data extraction
-* Document comparison dashboards
-* AI-powered data analysis
-* Agentic document workflows
-* Source highlighting
-* Multi-language document support
+### 3. Start Frontend App
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+
+Open **`http://localhost:5173`** in your browser!

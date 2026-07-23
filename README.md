@@ -9,7 +9,6 @@
 
 - 🚀 **Live Web Application**: **[https://nexora-doc-ai.loca.lt](https://nexora-doc-ai.loca.lt)** *(Local: `http://localhost:5173`)*
 - ⚡ **Live FastAPI Backend API**: **[https://nexora-api.loca.lt](https://nexora-api.loca.lt)** *(Local: `http://127.0.0.1:8000`)*
-- 📦 **GitHub Repository**: **[https://github.com/keerthanayr16-droid/nexora-](https://github.com/keerthanayr16-droid/nexora-)**
 
 ---
 
@@ -89,7 +88,7 @@
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/keerthanayr16-droid/nexora-.git
+git clone <your-repository-url>
 cd nexora-
 ```
 

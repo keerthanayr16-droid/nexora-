@@ -5,10 +5,11 @@
 
 ---
 
-## 🌐 Live Application Links
+## 🌐 Permanent Production Live Links
 
-- 🚀 **Live Web Application**: **[https://nexora-doc-ai.loca.lt](https://nexora-doc-ai.loca.lt)** *(Local: `http://localhost:5173`)*
-- ⚡ **Live FastAPI Backend API**: **[https://nexora-api.loca.lt](https://nexora-api.loca.lt)** *(Local: `http://127.0.0.1:8000`)*
+- 🚀 **Permanent Production Web App (Vercel)**: **[https://nexora-doc-ai.vercel.app](https://nexora-doc-ai.vercel.app)**
+- ⚡ **Local Dev Web App**: `http://localhost:5173`
+- ⚙️ **FastAPI Backend API**: `http://127.0.0.1:8000`
 
 ---
 
@@ -88,7 +89,7 @@
 
 ### 1. Clone Repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/keerthanayr16-droid/nexora-.git
 cd nexora-
 ```
 
